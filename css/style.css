@@ -1,0 +1,176 @@
+body {
+  background-color: #15b493;
+  color: white;
+}
+
+#wrap {
+  width: 100%;
+  padding: 4%;
+}
+
+h1 {
+  padding: 10px;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 20px;
+}
+
+h2 {
+  text-decoration: underline;
+}
+
+h1,
+h2 {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.menu-icon {
+  display: block;
+  width: 54px;
+  height: 54px;
+  margin: auto;
+  position: relative;
+  border-radius: 50%;
+}
+.menu-icon span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #fff;
+}
+.menu-icon span:before,
+.menu-icon span:after {
+  content: "";
+  background-color: #fff;
+  width: 22px;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-6px);
+  transition: transform 0.5s;
+}
+.menu-icon span:after {
+  transform: translateY(6px);
+}
+.menu-icon:hover span:before {
+  transform: translateY(-8px);
+}
+.menu-icon:hover span:after {
+  transform: translateY(8px);
+}
+
+.menu-icon-cross {
+  background-color: #052b23;
+  transition: transform 0.5s;
+}
+.menu-icon-cross span::before,
+.menu-icon-cross span::after {
+  transform-origin: 50% 50%;
+}
+.menu-icon-cross span {
+  transition: background 0.5s, transform 0.5s;
+}
+.menu-icon-cross svg {
+  fill: transparent;
+  stroke-width: 2px;
+  stroke: #fff;
+  stroke-dasharray: 165;
+  stroke-dashoffset: 165;
+  transition: stroke-dashOffset 1s, fill 0.5s;
+}
+.menu-icon-cross.isOpen {
+  transform: rotate(180deg);
+}
+.menu-icon-cross.isOpen span {
+  background: transparent;
+}
+.menu-icon-cross.isOpen span:before {
+  transform: translateY(0) rotate(45deg);
+}
+.menu-icon-cross.isOpen span:after {
+  transform: translateY(0) rotate(-45deg);
+}
+.menu-icon-cross.isOpen svg {
+  stroke-dashoffset: 0;
+}
+.menu-icon-cross.isOpen:hover svg {
+  fill: rgba(255, 255, 255, 0.1);
+}
+
+.menu-icon-path span {
+  background-color: #fff;
+  transition: background-color 0.5s steps(1, end);
+}
+.menu-icon-path svg {
+  fill: #052b23;
+  stroke-width: 2px;
+  stroke: transparent;
+  stroke-dasharray: 22 230;
+  transition: stroke-dashArray 0.5s, stroke-dashOffset 0.5s, transform 0.5s,
+    stroke 0.5s steps(1, end);
+}
+.menu-icon-path.isOpen span {
+  background-color: transparent;
+  transition: background-color 0.5s steps(1, start);
+}
+.menu-icon-path.isOpen svg {
+  stroke: #fff;
+  stroke-dashoffset: -65;
+  stroke-dasharray: 160;
+  transition: stroke-dashArray 1s, stroke-dashOffset 0.5s, transform 0.5s,
+    stroke 0.5s steps(1, start), fill 0.5s;
+}
+.menu-icon-path.isOpen span:before {
+  transform: translateY(0) rotate(45deg);
+}
+.menu-icon-path.isOpen span:after {
+  transform: translateY(0) rotate(-45deg);
+}
+.menu-icon-path.isOpen:hover svg {
+  fill: #1d3f38;
+}
+
+.menu-icon-arrow {
+  background-color: #052b23;
+  transition: transform 0.5s;
+}
+.menu-icon-arrow span,
+.menu-icon-arrow span:before,
+.menu-icon-arrow span:after {
+  transition: background 0.5s, transform 0.5s, width 0.5s;
+  transform-origin: 100% 50%;
+}
+.menu-icon-arrow svg {
+  fill: transparent;
+  stroke-width: 2px;
+  stroke: #fff;
+  stroke-dasharray: 165;
+  stroke-dashoffset: 165;
+  transition: stroke-dashOffset 1s ease, fill 0.5s;
+}
+.menu-icon-arrow.isOpen {
+  transform: rotate(180deg);
+}
+.menu-icon-arrow.isOpen span:before {
+  transform: translateY(0) rotate(45deg);
+}
+.menu-icon-arrow.isOpen span:after {
+  transform: translateY(0) rotate(-45deg);
+}
+.menu-icon-arrow.isOpen span:before,
+.menu-icon-arrow.isOpen span:after {
+  width: 50%;
+  right: 0;
+  left: auto;
+}
+.menu-icon-arrow.isOpen svg {
+  stroke-dashoffset: 0;
+}
+.menu-icon-arrow.isOpen:hover svg {
+  fill: rgba(255, 255, 255, 0.1);
+}
